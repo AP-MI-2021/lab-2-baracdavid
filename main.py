@@ -13,13 +13,16 @@ def get_largest_prime_below(n):
     elif n==3:
         return 2
     else:
-        return 0
+        return None
 def test_get_largest_prime_below():
     assert get_largest_prime_below(3) == 2
     assert get_largest_prime_below(10) == 7
     assert get_largest_prime_below(6) == 5
     assert get_largest_prime_below(100) == 97
     assert get_largest_prime_below(7) == 5
+    assert get_largest_prime_below(-5) == None
+    assert get_largest_prime_below(2) == None
+    assert get_largest_prime_below(1) == None
 
 def get_age_in_days(birthday):
     todays_date = date.today()
