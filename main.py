@@ -75,6 +75,15 @@ def is_palindrome(n):
         return True
     else :
         return False
+def test_is_palindrome():
+    assert is_palindrome(121) == True
+    assert is_palindrome(444454444) == True
+    assert is_palindrome(1221) == True
+    assert is_palindrome(1231) == False
+    assert is_palindrome(311) == False
+    assert is_palindrome(41) == False
+    assert is_palindrome(419999) == False
+
 def main ():
     while True :
         print("1.Gaseste ultimul număr prim, mai mic decât un număr dat.")
@@ -109,7 +118,9 @@ def main ():
                 print (f'{get_age_in_days(data_nasterii)} zile' )
         elif optiune == "3":
             un_numar=int(input("Introduceti un numar: "))
-            if is_palindrome(un_numar) == True:
+            if un_numar < 0:
+                print("numar invalid")
+            elif is_palindrome(un_numar) == True:
                 print (f'Numaraul {un_numar} este palindrom')
             else:
                 print(f'Numaraul {un_numar} nu este palindrom')
@@ -117,4 +128,5 @@ def main ():
             print("Optiune invalida")
     test_get_largest_prime_below()
     test_get_age_in_days()
+    test_is_palindrome()
 main()
