@@ -129,4 +129,5 @@ def main ():
     test_get_largest_prime_below()
     test_get_age_in_days()
     test_is_palindrome()
+    if __name__ == '__main__':
 main()
