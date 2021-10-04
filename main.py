@@ -65,11 +65,22 @@ def test_get_age_in_days():
     assert get_age_in_days("-20/100 /2005") == 0
     assert get_age_in_days("21/01 /-111") == 0
     assert get_age_in_days("2/-1 /2005") == 0
+def is_palindrome(n):
+    copie=n
+    oglinda=0
+    while copie !=0 :
+        oglinda = oglinda * 10 + copie % 10
+        copie=copie//10
+    if n == oglinda :
+        return True
+    else :
+        return False
 def main ():
     while True :
         print("1.Gaseste ultimul număr prim, mai mic decât un număr dat.")
         print("2.Determinați vârsta unei persoanei în zile")
-        print("x.Inchide program")
+        print("3.Verifica daca un numar este palindrom")
+        print("x.Inchide programul")
         optiune=input("Alegeti o optiune: ")
         if optiune == 'X' :
             break
@@ -96,7 +107,12 @@ def main ():
             else:
                 print("Varsta in zile este: ")
                 print (f'{get_age_in_days(data_nasterii)} zile' )
-
+        elif optiune == "3":
+            un_numar=int(input("Introduceti un numar: "))
+            if is_palindrome(un_numar) == True:
+                print (f'Numaraul {un_numar} este palindrom')
+            else:
+                print(f'Numaraul {un_numar} nu este palindrom')
         else:
             print("Optiune invalida")
     test_get_largest_prime_below()
